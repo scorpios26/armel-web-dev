@@ -1,0 +1,12 @@
+
+export default function Footer() {
+  return (
+    <footer className="py-10 border-t border-gray-300 dark:border-[#2E186A] mt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p className="text-sm">
+          &copy; {new Date().getFullYear()} Armel - Web Developer. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  );
+} 

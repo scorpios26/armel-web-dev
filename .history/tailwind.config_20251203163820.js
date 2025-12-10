@@ -1,0 +1,25 @@
+// tailwind.config.js
+export default {
+  darkMode: 'class',
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  theme: {
+    extend: {
+      animation: {
+        "spin-neon": "spin 1.3s linear infinite",
+    "pulse-neon": "pulseNeon 1.2s ease-in-out infinite",
+    "text-glow": "textGlow 1.5s ease-in-out infinite",
+      },
+      keyframes: {
+        scan: {
+          "0%, 100%": { transform: "translateY(-20px)" },
+          "50%": { transform: "translateY(20px)" },
+        },
+      },
+      fontFamily: {
+        orbitron: ['Orbitron', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
+      },
+    },
+  },
+  plugins: [],
+};

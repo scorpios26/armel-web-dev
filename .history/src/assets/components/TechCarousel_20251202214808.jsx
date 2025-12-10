@@ -1,0 +1,114 @@
+import React, { useEffect, useRef } from "react";
+
+export default function LogoCarousel() {
+  const scrollerRef = useRef(null);
+
+  useEffect(() => {
+    const ul = scrollerRef.current;
+    if (!ul) return;
+
+    // Duplicate the list once for seamless infinite scroll
+    ul.insertAdjacentHTML("afterend", ul.outerHTML);
+    ul.nextSibling.setAttribute("aria-hidden", "true");
+  }, []);
+
+  return (
+    <div className="relative font-inter antialiased">
+      <main className="relative min-h-screen flex flex-col justify-center overflow-hidden">
+        <h2 className="text-4xl lg:text-5xl font-bold mb-25 font-orbitron">Tech Stack</h2>
+        <div className="w-full max-w-5xl mx-auto px-4 md:px-6 py-24">
+          <div className="text-center">
+            {/* Logo Carousel */}
+            <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
+              <ul
+                ref={scrollerRef}
+                className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll"
+              >
+                <li>
+                  <img
+                    src="https://www.svgrepo.com/show/353985/laravel.svg"
+                    alt="laravel"
+                    className="w-12 h-12"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="https://www.svgrepo.com/show/452136/wordpress.svg"
+                    alt="Wordpress"
+                    className="w-12 h-12"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="https://www.php.net/images/logos/new-php-logo.svg"
+                    alt="PHP"
+                    className="w-12 h-12"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="https://www.svgrepo.com/show/452228/html-5.svg"
+                    alt="HTML5"
+                    className="w-12 h-12"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="https://www.svgrepo.com/show/452185/css-3.svg"
+                    alt="CSS3"
+                    className="w-12 h-12"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="https://www.svgrepo.com/show/303251/mysql-logo.svg"
+                    alt="MySQL"
+                    className="w-12 h-12"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="https://www.svgrepo.com/show/349419/javascript.svg"
+                    alt="JavaScript"
+                    className="w-12 h-12"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="https://www.svgrepo.com/show/355190/reactjs.svg"
+                    alt="ReactJS"
+                    className="w-12 h-12"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="https://www.svgrepo.com/show/374118/tailwind.svg"
+                    alt="Tailwind CSS"
+                    className="w-12 h-12"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="https://www.svgrepo.com/show/353498/bootstrap.svg"
+                    alt="Bootstrap"
+                    className="w-12 h-12"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="https://www.svgrepo.com/show/374167/vite.svg"
+                    alt="Vite"
+                    className="w-12 h-12"
+                  />
+                </li>
+              </ul>
+            </div>
+            {/* End Logo Carousel */}
+          </div>
+        </div>
+      </main>
+
+      
+    </div>
+  );
+}
